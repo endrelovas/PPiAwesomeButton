@@ -6,6 +6,11 @@ UIButton category with new methods to setup a button with text + FontAwesome Ico
 
 
 ### Updates
+##### Custom fork: October 2015 - 1.5
+- Adds support for 4.4.2 Awesome fonts
+- Adds support for UITapGestureRecogniser when embedded to UITableViewController. Use setForceTapGestureRecogniser
+
+### Updates
 ##### 7th - November 2014 - Cocoapods version - 1.4.2
 - Fixed a bug that caused users having empty buttons (when they tried to create the button with text but without icon)
 
