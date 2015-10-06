@@ -68,6 +68,19 @@
     [self updateButtonContent];
 }
 
+- (void) setForceTapGestureRecogniser:(bool)ForceTapGestureRecogniser {
+    _ForceTapGestureRecogniser = ForceTapGestureRecogniser;
+    if (ForceTapGestureRecogniser) {
+        if (_tapRecogniser == nil)
+            self.tapRecogniser = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(buttonTapped:)];
+        [self addGestureRecognizer:_tapRecogniser];
+        
+    } else {
+        [self removeGestureRecognizer:self.tapRecogniser];
+        self.tapRecogniser = nil;
+    }
+}
+
 
 -(void)updateButtonContent{
     // Removing from superView
@@ -250,6 +263,11 @@
     }
 }
 
+- (void) buttonTapped:(id) sender {
+    if(self.actionBlock){
+        self.actionBlock(self);
+    }
+}
 
 #pragma mark - Lazy Instantiation
 

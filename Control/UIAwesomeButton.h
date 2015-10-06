@@ -17,6 +17,9 @@ typedef void (^block)();
 @property (nonatomic, strong) NSDictionary *textAttributes;
 @property (copy) void (^actionBlock)(UIAwesomeButton *button);
 
+@property (nonatomic, assign) bool ForceTapGestureRecogniser; //Use when embedded inside a UITableViewController with static prototype cells
+@property (nonatomic, strong) UITapGestureRecognizer * tapRecogniser;
+
 // Initializers
 + (UIAwesomeButton*)buttonWithType:(UIButtonType)type
                               text:(NSString *)text
